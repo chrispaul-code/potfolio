@@ -7,10 +7,104 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import FloatingParticles from "@/components/ui/partical"
+import toast from "react-hot-toast"
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+
+    const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | "">("")
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors((prev) => {
+        const newErrors = { ...prev }
+        delete newErrors[name]
+        return newErrors
+      })
+    }
+  }
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {}
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required"
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required"
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Email is invalid"
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Subject is required"
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    
+    setIsSubmitting(true);
+    try {
+      const responsePromise = fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      await toast.promise(
+        responsePromise,
+        {
+          loading: "Sending Email...",
+          success: "Email sent successfully !",
+          error: "Failed to send email !",
+        }
+      );
+
+      await responsePromise;
+      
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+
+        setSubmitStatus("success");
+
+        const form = document.querySelector("form");
+        form?.reset();
+
+    } catch (error) {
+      setSubmitStatus("error");
+      console.error("Error sending email :", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     setIsVisible(true)
@@ -20,23 +114,23 @@ export default function Portfolio() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsMenuOpen(false) // Close menu after clicking
-    }
-  }
+  // const scrollToSection = (sectionId: string) => {
+  //   const element = document.getElementById(sectionId)
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: "smooth" })
+  //     setIsMenuOpen(false) // Close menu after clicking
+  //   }
+  // }
 
   const navItems = [
-    { name: "Home", id: "home" },
-    { name: "About", id: "about" },
-    { name: "Skills", id: "skills" },
-    { name: "Experience", id: "experience" },
-    { name: "Projects", id: "projects" },
-    { name: "Freelance", id: "freelance" },
-    { name: "Education", id: "education" },
-    { name: "Contact", id: "contact" },
+    { name: "Home", id: "#home" },
+    { name: "About", id: "#about" },
+    { name: "Skills", id: "#skills" },
+    { name: "Experience", id: "#experience" },
+    { name: "Projects", id: "#projects" },
+    { name: "Freelance", id: "#freelance" },
+    { name: "Education", id: "#education" },
+    { name: "Contact", id: "#contact" },
   ]
 
   return (
@@ -97,12 +191,12 @@ export default function Portfolio() {
             <ul className="space-y-4 w-fit mx-auto ">
               {navItems.map((item) => (
                 <li key={item.id}>
+                 <a href={item.id}>
                   <button
-                    onClick={() => scrollToSection(item.id)}
                     className="block w-full text-left text-white hover:text-gray-300 transition-colors py-2 text-lg font-medium"
                   >
                     {item.name}
-                  </button>
+                  </button></a> 
                 </li>
               ))}
             </ul>
@@ -117,7 +211,7 @@ export default function Portfolio() {
       >
                 {/* Enhanced Grid Background for Hero */}
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-30 z-[-1]"
           style={{
             backgroundImage: `
         linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
@@ -129,12 +223,13 @@ export default function Portfolio() {
         
         <div className="mb-8">
             <h1
-              className={`text-6xl md:text-8xl lg:text-[8rem] xl:text-[8rem] font-black text-transparent bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text mb-4 tracking-tight leading-none transition-all duration-1000 ${
+              className={`text-6xl md:text-8xl lg:text-[8rem] xl:text-[8rem] font-black text-transparent  bg-clip-text mb-4 tracking-tight leading-none transition-all duration-1000 ${
                 isVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-10"
               }`}
               style={{
-                textShadow: "0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)",
+                // textShadow: "0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)",
                 filter: "drop-shadow(0 2px 4px rgba(255,255,255,0.1))",
+                backgroundImage:"linear-gradient(to bottom, white 0%  50%,#777 80% 100% ) "
               }}
             >
               CHRISTEEN PAUL
@@ -152,10 +247,10 @@ export default function Portfolio() {
           <p className="text-gray-400 text-sm md:text-base">Available for Freelance Projects</p>
         </div>
     
-    <a href="https://drive.google.com/file/d/1zxCTgVDxhy1aM1kbVWiI9l4dWFXYmLZ3/view">
-             <Button  className="bg-white text-black hover:bg-green-500 px-6 py-3 rounded-md font-medium mb-12" size="lg">
+    <a className="cursor-pointer" target="_blank" href="https://drive.google.com/file/d/1zxCTgVDxhy1aM1kbVWiI9l4dWFXYmLZ3/view">
+        <Button  className="bg-white text-black hover:bg-green-500 px-6 py-3 rounded-md font-medium mb-12 cursor-pointer z-100"  size="lg">
           <Download className="w-4 h-4 mr-2" />
-          Download Resume
+           Download Resume
         </Button>
     </a>
 
@@ -173,10 +268,10 @@ export default function Portfolio() {
               <a href="https://www.linkedin.com/in/christeencode/"><Linkedin className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-16 h-16 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href=""><Mail className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+              <a href="mailto:chrispaul1311@gmail.com"><Mail className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-16 h-16 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <Phone className="h-7 w-7 text-gray-300 hover:text-white transition-colors" />
+              <a href="tel:918928016153"><Phone className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
           </div>
 
@@ -521,22 +616,36 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-xl font-bold mb-6">Send a Message</h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <Input
                 placeholder="Your Name"
                 className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                onChange={handleChange}
+                name="name"
               />
+
               <Input
                 type="email"
                 placeholder="Your Email"
                 className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                onChange={handleChange}
+                 name="email"
+              />
+              <Input
+                placeholder="Subject"
+                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                onChange={handleChange}
+                 name="subject"
               />
               <Textarea
                 placeholder="Your Message"
                 rows={6}
                 className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                onChange={handleChange}
+                 name="message"
               />
-              <Button className="w-full bg-white text-black hover:bg-gray-100">Send Message</Button>
+              <Button className="w-full bg-white text-black hover:bg-gray-100" type="submit" >{isSubmitting?"Sending...":"Send Message"}</Button>
+              <p>{submitStatus}</p>
             </form>
           </div>
 
@@ -546,11 +655,11 @@ export default function Portfolio() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-gray-400" />
-                  <span className="text-gray-300">nihalpanday@email.com</span>
+                  <span className="text-gray-300">chrispaul1311@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-gray-400" />
-                  <span className="text-gray-300">+1 (555) 123-4567</span>
+                  <span className="text-gray-300">+91 8928016153</span>
                 </div>
               </div>
             </div>
@@ -570,7 +679,7 @@ export default function Portfolio() {
             <div>
               <h3 className="text-xl font-bold mb-6">Location</h3>
               <p className="text-gray-300">
-                New York, NY, USA
+                India
                 <br />
                 Available for remote work worldwide
               </p>
@@ -582,7 +691,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="relative z-10 py-8 px-6 border-t border-gray-800">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400">© 2024 Nihal Panday. All rights reserved.</p>
+          <p className="text-gray-400">© 2025 Christeen Paul. All rights reserved.</p>
         </div>
       </footer>
     </div>

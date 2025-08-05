@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/* @import "tw-animate-css"; */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -115,10 +115,14 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scroll-behavior: responsive;
+    
   }
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: responsive;
   }
+ 
 }
 
 /* @keyframes float {
@@ -281,4 +285,8 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+*{
+  scroll-behavior: smooth;
 }
