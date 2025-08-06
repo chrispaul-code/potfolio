@@ -172,7 +172,7 @@ export default function Portfolio() {
           </div> */}
           <div className=" boder bg-black rounded-full flex items-center gap-2 ">
                         <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href="https://github.com/chrispaul-code"><Github className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+              <a target="_blank" href="https://github.com/chrispaul-code"><Github className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
           </div>
           <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={toggleMenu}>
@@ -260,14 +260,14 @@ export default function Portfolio() {
               isVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="w-16 h-16 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href="https://github.com/chrispaul-code"><Github className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+            <div  className="w-16 h-16 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
+              <a target="_blank" href="https://github.com/chrispaul-code"><Github className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-16 h-16 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href="https://www.linkedin.com/in/christeencode/"><Linkedin className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+              <a target="_blank" href="https://www.linkedin.com/in/christeencode/"><Linkedin className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-16 h-16 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href="mailto:chrispaul1311@gmail.com"><Mail className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+              <a target="_blank" href="mailto:chrispaul1311@gmail.com"><Mail className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-16 h-16 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
               <a href="tel:918928016153"><Phone className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
@@ -417,77 +417,72 @@ export default function Portfolio() {
               {
                 title: "Toundra",
                 description: [
-                  "Full-stack restaurant management system",
-                  "Real-time order tracking and notifications",
-                  "Integrated contact form functionality using Express.js and Nodemailer for email handling.",
-                  "Admin dashboard for menu management",
+                  "Design & Development: Customized website design using modern UI/UX principles, enhancing user engagement and accessibility.",
+                  "Content Management: Integrated Link content management system (CMS) for easy updates, allowing the client to manage content effortlessly.",
+                  "SEO Optimization: Implemented SEO best practices, improving website visibility and search engine rankings.",
                 ],
                 techStack:[
                   "Figma", "React.js", "Tailwind CSS", "Express.js"
                 ],
                 img:"/toundra.png",
                 live:"https://www.devian.in",
-                github:"https://github.com/chrispaul-code"
+                github:"https://github.com/chrispaul-code",
+                tag:true
               },
               {
                 title: "Chem Stock",
                 description: [
-                  "Track cryptocurrency investments and expenses",
-                  "Real-time price updates via API integration",
-                  "Data visualization with charts and graphs",
-                  "Export functionality for tax reporting",
+                  "E-commerce platform enabling sellers to list excess or leftover chemical stock for purchase by verified buyers.",
+                   "Built with role-based access control, featuring separate dashboards for Sellers, Buyers, and Admin.",
+                  "Includes an advanced Admin Panel with real-time analytics and inventory monitoring capabilities.",
+                   "Optimized for SEO to improve product discoverability and organic traffic.",
                 ],
                   techStack:[
                   "Figma", "React.js", "Tailwind CSS", "Express.js"
                 ],
                 img:"/chemstock.png",
                 live:"https://www.devian.in",
-                github:"https://github.com/chrispaul-code"
+                github:"https://github.com/chrispaul-code",
+                tag:true
               },
               {
                 title: "DevTinder",
                 description: [
-                  "RESTful API wrapper for AI services",
-                  "Authentication and rate limiting",
-                  "Comprehensive documentation and testing",
-                  "Deployed on AWS with auto-scaling",
+                      "A developer matchmaking platform inspired by Tinder, allowing users to connect and collaborate on tech projects.",
+                      "Built as a full-stack application with custom RESTful APIs, replicating core Tinder functionalities like swiping, connection requests, accept/reject logic, and real-time updates.",
+                      "Implemented secure user authentication, profile management, and request"
                 ],
-
                  techStack:[
                   "Figma", "React.js", "Tailwind CSS", "Express.js"
                 ],
-                img:"/asset1.jpg",   
+                img:"/DevTinder.jpg",   
                 live:"https://www.devian.in",
-                github:"https://github.com/chrispaul-code"
+                github:"https://github.com/chrispaul-code/devTinder-web"
               },
               {
                 title: "Youtube Clone",
-                description: [
-                  "Full-featured online shopping platform",
-                  "User authentication and profile management",
-                  "Shopping cart and checkout functionality",
-                  "Admin panel for inventory management",
-                ],
+                  description: [
+                    "Developed a responsive frontend clone of YouTube using the YouTube Data API for fetching real-time video content.",
+                     "Implemented dynamic search functionality with auto-suggestions powered by Redux state management.",
+                     "Integrated video playback, comments section, and user interaction features to closely mimic the original platform."
+                 ],
                  techStack:[
-                  "Figma", "React.js", "Tailwind CSS", "Express.js","Node.js","Redux"
+                   "React.js", "Tailwind CSS","Redux",
                 ],
                 img:"/Youtube-Clone.jpg",
-                live:"https://www.devian.in",
-                github:"https://github.com/chrispaul-code"
+                github:"https://github.com/chrispaul-code/youutube"
               },
-                            {
+              {
                 title: "Swiggy Clone",
                 description: [
-                  "Full-featured online shopping platform",
-                  "User authentication and profile management",
-                  "Shopping cart and checkout functionality",
-                  "Admin panel for inventory management",
+                  "Developed a frontend clone of Swiggy using live data from Swiggy's API to display restaurant listings and menu items.",
+                  "Implemented Redux for global state management, enabling efficient add-to-cart functionality and order tracking.",
+                  "Built with a responsive UI to replicate real-world food delivery app experience."
                 ],
                  techStack:[
                   "Figma", "React.js", "Tailwind CSS", "Express.js","Node.js","Redux"
                 ],
                 img:"/Swiggy-Clone.jpg",
-                live:"https://www.devian.in",
                 github:"https://github.com/chrispaul-code"
               },
               // {
@@ -506,13 +501,22 @@ export default function Portfolio() {
             ].map((project, index) => (
 <Card
   key={index}
-  className="flex flex-col md:flex-row gap-6 bg-[#0B0F19] border border-white/10 rounded-xl p-4"
+  className="flex flex-col md:flex-row gap-6 bg-[#0B0F19] border border-white/10 rounded-xl p-4 hover:scale-105 transition-transform duration-300"
 >
+
   {/* Image Preview Placeholder */}
-  <div className="md:w-1/3 w-full mt-4 ">
-    <div className="bg-gray-800 h-42 p-2 rounded-lg flex items-center justify-center text-gray-500 text-sm">
+  <div className="md:w-1/3 w-full mt-2 ">
+  <div className="mb-3">
+        {project.tag && (
+      <span className="text-xs bg-green-600 text-white px-2 py-1 rounded-md font-medium">
+        Freelance Project
+      </span>
+    )} 
+  </div>
+
+    <div className=" h-42 mt-4 rounded-lg flex items-center justify-center text-gray-500 text-sm">
       {/* Replace with actual image if available */}
-      <img src={project.img} alt={project.title} />
+      <img className="h-45" src={project.img} alt={project.title} />
     </div>
   </div>
 
@@ -521,9 +525,11 @@ export default function Portfolio() {
     <div>
       <div className="flex items-center justify-between">
         <h3 className="text-white text-xl font-semibold mb-2">{project.title}</h3>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
+
+
          {project.live ? (
-            <a href={project.live} target="_blank" rel="noopener noreferrer">
+            <a target="_blank" href={project.live}  rel="noopener noreferrer">
              <Button
                size="sm"
                  className="bg-white text-black font-medium px-3 py-1 hover:bg-gray-200"
@@ -533,7 +539,7 @@ export default function Portfolio() {
               </a>
             ) : null}
  
-          <a href={project.github}>
+          <a target="_blank" href={project.github}>
           <Button
             size="sm"
             className="bg-white text-black font-medium px-2 py-1 hover:bg-gray-200"
@@ -576,27 +582,27 @@ export default function Portfolio() {
       </section>
 
       {/* Freelance Services Section */}
-      <section id="freelance" className="relative z-10 py-20 px-6">
+      <section id="freelance" className="relative z-10 py-20 px-6 ">
         <h2 className="text-3xl font-bold text-center mb-12">FREELANCE SERVICES</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           {[
             {
               title: "Full Stack Development",
-              price: "Starting from $2500",
+              price: "Starting from $2000",
               description: "Complete web application development from concept to deployment",
             },
             {
               title: "Frontend Development",
-              price: "Starting from $1500",
+              price: "Starting from $800",
               description: "Modern, responsive user interfaces using React and Next.js",
             },
             {
               title: "Backend Development",
-              price: "Starting from $2000",
+              price: "Starting from $1000",
               description: "Scalable server-side solutions with APIs and database integration",
             },
           ].map((service, index) => (
-            <Card key={index} className="bg-gray-900/50 border-gray-800 text-center">
+            <Card key={index} className="bg-gray-900/50 border-gray-800 text-center hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
                 <p className="text-2xl font-bold text-green-400 mb-4">{service.price}</p>
@@ -684,13 +690,13 @@ export default function Portfolio() {
               <h3 className="text-xl font-bold mb-6">Social Media</h3>
               <div className="flex space-x-4">
             <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href="https://github.com/chrispaul-code"><Github className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+              <a target="_blank" href="https://github.com/chrispaul-code"><Github className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href="https://www.linkedin.com/in/christeencode/"><Linkedin className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+              <a target="_blank" href="https://www.linkedin.com/in/christeencode/"><Linkedin className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href="mailto:chrispaul1311@gmail.com"><Mail className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+              <a target="_blank" href="mailto:chrispaul1311@gmail.com"><Mail className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
               <a href="tel:918928016153"><Phone className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
