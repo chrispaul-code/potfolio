@@ -270,7 +270,7 @@ export default function Portfolio() {
               <a target="_blank" href="mailto:chrispaul1311@gmail.com"><Mail className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
             <div className="w-16 h-16 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
-              <a href="tel:918928016153"><Phone className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+              <a href="tel:8928016153"><Phone className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
             </div>
           </div>
 
@@ -425,7 +425,7 @@ export default function Portfolio() {
                   "Figma", "React.js", "Tailwind CSS", "Express.js"
                 ],
                 img:"/toundra.png",
-                live:"https://www.devian.in",
+                live:"https://toundra.vercel.app",
                 github:"https://github.com/chrispaul-code",
                 tag:true
               },
@@ -441,7 +441,7 @@ export default function Portfolio() {
                   "Figma", "React.js", "Tailwind CSS", "Express.js"
                 ],
                 img:"/chemstock.png",
-                live:"https://www.devian.in",
+                live:"https://chemstock.co.in",
                 github:"https://github.com/chrispaul-code",
                 tag:true
               },
@@ -456,7 +456,6 @@ export default function Portfolio() {
                   "Figma", "React.js", "Tailwind CSS", "Express.js"
                 ],
                 img:"/DevTinder.jpg",   
-                live:"https://www.devian.in",
                 github:"https://github.com/chrispaul-code/devTinder-web"
               },
               {
