@@ -286,14 +286,14 @@ export default function Portfolio() {
         <h2 className="text-3xl font-bold text-center mb-12">ABOUT ME</h2>
         <div className="text-gray-300 leading-relaxed space-y-4">
           <p>
-            I'm a passionate full-stack developer with a strong foundation in both frontend and backend technologies. My
+            I&apos;m a passionate full-stack developer with a strong foundation in both frontend and backend technologies. My
             journey in web development started with a curiosity about how things work behind the scenes, and it has
             evolved into a deep love for creating efficient, scalable, and user-friendly applications.
           </p>
           <p>
             With expertise in modern JavaScript frameworks like React and Node.js, I bring a comprehensive approach to
-            web development. I'm particularly drawn to projects that challenge me to think creatively and solve complex
-            problems, whether it's optimizing database queries, implementing responsive designs, or architecting
+            web development. I&apos;m particularly drawn to projects that challenge me to think creatively and solve complex
+            problems, whether it&apos;s optimizing database queries, implementing responsive designs, or architecting
             scalable backend systems.
           </p>
           <p>
