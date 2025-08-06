@@ -114,23 +114,22 @@ export default function Portfolio() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  // const scrollToSection = (sectionId: string) => {
-  //   const element = document.getElementById(sectionId)
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: "smooth" })
-  //     setIsMenuOpen(false) // Close menu after clicking
-  //   }
-  // }
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      setIsMenuOpen(false) // Close menu after clicking
+    }
+  }
 
   const navItems = [
-    { name: "Home", id: "#home" },
-    { name: "About", id: "#about" },
-    { name: "Skills", id: "#skills" },
-    { name: "Experience", id: "#experience" },
-    { name: "Projects", id: "#projects" },
-    { name: "Freelance", id: "#freelance" },
-    { name: "Education", id: "#education" },
-    { name: "Contact", id: "#contact" },
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
+    { name: "Experience", id: "experience" },
+    { name: "Projects", id: "projects" },
+    { name: "Freelance", id: "freelance" },
+    { name: "Contact", id: "contact" },
   ]
 
   return (
@@ -191,12 +190,12 @@ export default function Portfolio() {
             <ul className="space-y-4 w-fit mx-auto ">
               {navItems.map((item) => (
                 <li key={item.id}>
-                 <a href={item.id}>
                   <button
+                    onClick={() => scrollToSection(item.id)}
                     className="block w-full text-left text-white hover:text-gray-300 transition-colors py-2 text-lg font-medium"
                   >
                     {item.name}
-                  </button></a> 
+                  </button>
                 </li>
               ))}
             </ul>
@@ -248,7 +247,7 @@ export default function Portfolio() {
         </div>
     
     <a className="cursor-pointer" target="_blank" href="https://drive.google.com/file/d/1zxCTgVDxhy1aM1kbVWiI9l4dWFXYmLZ3/view">
-        <Button  className="bg-white text-black hover:bg-green-500 px-6 py-3 rounded-md font-medium mb-12 cursor-pointer z-100"  size="lg">
+        <Button  className="bg-gray-200 text-black hover:bg-white  hover:scale-110 border-gray-700/50 transition-all duration-300 px-6 py-3 rounded-md font-medium mb-12 cursor-pointer z-100"  size="lg">
           <Download className="w-4 h-4 mr-2" />
            Download Resume
         </Button>
@@ -399,22 +398,22 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 max-w-5xl mx-auto   gap-8">
             {[
-              {
-                title: "Agency Website",
-                description: [
-                  "Modern responsive website built with React",
-                  "Integrated contact forms and CMS",
-                  "Optimized for SEO and performance",
-                  "Custom animations and interactions",
-                ],
-                techStack:[
-                  "Figma", "React.js", "Tailwind CSS", "Express.js"
-                ],
-                img:"/asset1.jpg",
-                live:"https://www.devian.in",
-                github:"https://github.com/chrispaul-code"
+              // {
+              //   title: "Agency Website",
+              //   description: [
+              //     "Modern responsive website built with React",
+              //     "Integrated contact forms and CMS",
+              //     "Optimized for SEO and performance",
+              //     "Custom animations and interactions",
+              //   ],
+              //   techStack:[
+              //     "Figma", "React.js", "Tailwind CSS", "Express.js"
+              //   ],
+              //   img:"/asset1.jpg",
+              //   live:"https://www.devian.in",
+              //   github:"https://github.com/chrispaul-code"
                 
-              },
+              // },
               {
                 title: "Toundra",
                 description: [
@@ -462,6 +461,21 @@ export default function Portfolio() {
                 github:"https://github.com/chrispaul-code"
               },
               {
+                title: "Youtube Clone",
+                description: [
+                  "Full-featured online shopping platform",
+                  "User authentication and profile management",
+                  "Shopping cart and checkout functionality",
+                  "Admin panel for inventory management",
+                ],
+                 techStack:[
+                  "Figma", "React.js", "Tailwind CSS", "Express.js","Node.js","Redux"
+                ],
+                img:"/Youtube-Clone.jpg",
+                live:"https://www.devian.in",
+                github:"https://github.com/chrispaul-code"
+              },
+                            {
                 title: "Swiggy Clone",
                 description: [
                   "Full-featured online shopping platform",
@@ -472,7 +486,7 @@ export default function Portfolio() {
                  techStack:[
                   "Figma", "React.js", "Tailwind CSS", "Express.js","Node.js","Redux"
                 ],
-                img:"/chemstock.png",
+                img:"/Swiggy-Clone.jpg",
                 live:"https://www.devian.in",
                 github:"https://github.com/chrispaul-code"
               },
@@ -508,14 +522,16 @@ export default function Portfolio() {
       <div className="flex items-center justify-between">
         <h3 className="text-white text-xl font-semibold mb-2">{project.title}</h3>
         <div className="flex gap-2">
-          <a href={project.live}>
+         {project.live ? (
+            <a href={project.live} target="_blank" rel="noopener noreferrer">
              <Button
-                size="sm"
-                className="bg-white text-black font-medium px-3 py-1 hover:bg-gray-200"
-              >
-               Live
-             </Button>
-          </a>
+               size="sm"
+                 className="bg-white text-black font-medium px-3 py-1 hover:bg-gray-200"
+                >
+                Live
+               </Button>
+              </a>
+            ) : null}
  
           <a href={project.github}>
           <Button
@@ -619,7 +635,7 @@ export default function Portfolio() {
             <form className="space-y-4" onSubmit={handleSubmit}>
               <Input
                 placeholder="Your Name"
-                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                className="bg-gray-900/50 border-gray-700 text-white h-12 placeholder:text-gray-400"
                 onChange={handleChange}
                 name="name"
               />
@@ -627,24 +643,24 @@ export default function Portfolio() {
               <Input
                 type="email"
                 placeholder="Your Email"
-                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                className="bg-gray-900/50 border-gray-700 text-white h-12 placeholder:text-gray-400"
                 onChange={handleChange}
                  name="email"
               />
               <Input
                 placeholder="Subject"
-                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                className="bg-gray-900/50 border-gray-700 text-white h-12 placeholder:text-gray-400"
                 onChange={handleChange}
                  name="subject"
               />
               <Textarea
                 placeholder="Your Message"
-                rows={6}
-                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                rows={8}  // increase from 6 to 8 (or more)
+                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400 p-4 h-40 resize-none"
                 onChange={handleChange}
-                 name="message"
+                name="message"
               />
-              <Button className="w-full bg-white text-black hover:bg-gray-100" type="submit" >{isSubmitting?"Sending...":"Send Message"}</Button>
+              <Button className="w-full bg-white h-12 text-black hover:bg-gray-100" type="submit" >{isSubmitting?"Sending...":"Send Message"}</Button>
               <p>{submitStatus}</p>
             </form>
           </div>
@@ -667,12 +683,18 @@ export default function Portfolio() {
             <div>
               <h3 className="text-xl font-bold mb-6">Social Media</h3>
               <div className="flex space-x-4">
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-white/10">
-                  <Github className="h-6 w-6" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-white/10">
-                  <Linkedin className="h-6 w-6" />
-                </Button>
+            <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
+              <a href="https://github.com/chrispaul-code"><Github className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+            </div>
+            <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
+              <a href="https://www.linkedin.com/in/christeencode/"><Linkedin className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+            </div>
+            <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
+              <a href="mailto:chrispaul1311@gmail.com"><Mail className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+            </div>
+            <div className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 cursor-pointer border border-gray-700/50">
+              <a href="tel:918928016153"><Phone className="h-7 w-7 text-gray-300 hover:text-white transition-colors" /></a>
+            </div>
               </div>
             </div>
 

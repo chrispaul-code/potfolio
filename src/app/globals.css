@@ -125,7 +125,7 @@
  
 }
 
-/* @keyframes float {
+@keyframes float {
   from{
     top: 0;
     
@@ -133,19 +133,19 @@
   to{
     
     top: -20px;
-    /* opacity: 0.5; */
+    opacity: 0.5;
    
-  /* }
-} */ 
+   }
+} 
 
-/* .heading span {
+.heading span {
   animation: float 2s linear infinite alternate;
   position: relative;
   transition: top 300ms linear;
   &:last-child{
     animation-delay: 1s;
   }
-} */
+}
 
 /* //animation */
 .animate-float {
@@ -287,6 +287,6 @@
   }
 }
 
-*{
+/* *{
   scroll-behavior: smooth;
-}
+} */
