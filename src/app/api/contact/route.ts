@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
 
           <div class="footer">
             <p>Best Regards,</p>
-            <p><strong>Christeen Pauk</strong><br>
+            <p><strong>Christeen Paul</strong><br>
             <a href="https://christeen-paul.vercel.app/">Gajender.vercel.app</a></p>
           </div>
         </div>
