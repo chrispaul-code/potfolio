@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import FloatingParticles from "@/components/ui/partical"
 import toast from "react-hot-toast"
+import StackIcon from "tech-stack-icons"
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -246,7 +247,7 @@ export default function Portfolio() {
           <p className="text-gray-400 text-sm md:text-base">Available for Freelance Projects</p>
         </div>
     
-    <a className="cursor-pointer" target="_blank" href="https://drive.google.com/file/d/1zxCTgVDxhy1aM1kbVWiI9l4dWFXYmLZ3/view">
+    <a className="cursor-pointer" target="_blank" href="https://drive.google.com/file/d/1nsjrVK3hdDm_RxXKoAtr1B2sawUtH9E6/view?usp=sharing">
         <Button  className="bg-gray-200 text-black hover:bg-white  hover:scale-110 border-gray-700/50 transition-all duration-300 px-6 py-3 rounded-md font-medium mb-12 cursor-pointer z-100"  size="lg">
           <Download className="w-4 h-4 mr-2" />
            Download Resume
@@ -304,27 +305,27 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Section */} 
       <section id="skills" className="relative z-10 py-20 px-6">
         <h2 className="text-3xl font-bold text-center mb-12">SKILLS</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { name: "HTML", icon: "🌐" },
-            { name: "CSS", icon: "🎨" },
-            { name: "JavaScript", icon: "⚡" },
-            { name: "TypeScript", icon: "📘" },
-            { name: "React", icon: "⚛️" },
-            { name: "Next.js", icon: "▲" },
-            { name: "Node.js", icon: "🟢" },
-            { name: "Express", icon: "🚀" },
-            { name: "MongoDB", icon: "🍃" },
-            { name: "PostgreSQL", icon: "🐘" },
-            { name: "Git", icon: "📝" },
-            { name: "Docker", icon: "🐳" },
-            { name: "AWS", icon: "☁️" },
-            { name: "Python", icon: "🐍" },
-            { name: "Java", icon: "☕" },
-            { name: "PHP", icon: "🔧" },
+            { name: "HTML", icon: <StackIcon className="h-10 w-10" name="html5" /> },
+            { name: "CSS", icon: <StackIcon className="h-10 w-10" name="css3" /> },
+            { name: "JavaScript", icon: <StackIcon className="h-10 w-10" name="js" /> },
+            { name: "TypeScript", icon: <StackIcon className="h-10 w-10" name="typescript" /> },
+            { name:"Tailwind", icon: <StackIcon className="h-10 w-10" name="tailwindcss" /> },
+            { name: "React", icon:<StackIcon className="h-10 w-10" name="react" />  },
+            { name: "Next.js", icon: <StackIcon className="h-10 w-10" name="nextjs2" />},
+            { name: "Node.js", icon: <StackIcon className="h-10 w-10"  name="nodejs" /> },
+            { name: "Express", icon: <StackIcon className="h-10 w-10 text-white bg-white rounded-full " name="expressjs" />},
+            { name: "MongoDB", icon: <StackIcon className="h-10 w-10" name="mongodb" /> },
+            { name: "PostgreSQL", icon: <StackIcon className="h-10 w-10" name="postgresql" /> },
+            { name: "Git", icon: <StackIcon className="h-10 w-10" name="git" /> },
+            { name: "Docker", icon: <StackIcon className="h-10 w-10" name="docker" /> },
+            { name: "AWS", icon: <StackIcon className="h-10 w-10" name="aws" /> },
+            { name: "Python", icon: <StackIcon className="h-10 w-10" name="python" /> },
+            {name:"postman", icon:<StackIcon className="h-10 w-10" name="postman" />}
           ].map((skill, index) => (
             <div
               key={index}

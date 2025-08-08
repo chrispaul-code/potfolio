@@ -2868,6 +2868,11 @@ tar@^7.4.3:
     mkdirp "^3.0.1"
     yallist "^5.0.0"
 
+tech-stack-icons@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/tech-stack-icons/-/tech-stack-icons-3.3.2.tgz#83b7ee455237a8b224dbf1fd32c8d97d6fcbfa51"
+  integrity sha512-5QegRg78uTzcgHOg61yU5G9w5UO88/R+yzKagKZFyAocGZrGPy1kF0hV2BWT8IT8j+AQ0/gDX4Je4n/DQDfcuw==
+
 tinyglobby@^0.2.13:
   version "0.2.14"
   resolved "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.14.tgz#5280b0cf3f972b050e74ae88406c0a6a58f4079d"
