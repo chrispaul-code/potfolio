@@ -554,7 +554,7 @@ export default function Portfolio() {
                  techStack:[
                   "Figma", "React.js", "Tailwind CSS", "Next.JS", "NodeJS", "REST API",
                 ],
-                img:"/NewLifeNgo.jpg",
+                img:"/NewLifeNGO.jpg",
                 live:"https://ngo-three-beta.vercel.app/",
                 github:"https://github.com/chrispaul-code",
                 tag:true
