@@ -247,7 +247,7 @@ export default function Portfolio() {
           <p className="text-gray-400 text-sm md:text-base">Available for Freelance Projects</p>
         </div>
     
-    <a className="cursor-pointer" target="_blank" href="https://drive.google.com/file/d/1nsjrVK3hdDm_RxXKoAtr1B2sawUtH9E6/view?usp=sharing">
+    <a className="cursor-pointer" target="_blank" href="https://drive.google.com/file/d/1NQES-pMNVn9NV_Mtzt-CkjgUcCpGEVH1/view?usp=sharing">
         <Button  className="bg-gray-200 text-black hover:bg-white  hover:scale-110 border-gray-700/50 transition-all duration-300 px-6 py-3 rounded-md font-medium mb-12 cursor-pointer z-100"  size="lg">
           <Download className="w-4 h-4 mr-2" />
            Download Resume
@@ -376,6 +376,23 @@ export default function Portfolio() {
               </ul>
             </CardContent>
           </Card>
+          <Card className="bg-gray-900/50 hover:scale-105 transition-transform duration-300 border-gray-800">
+            <CardContent className="p-6">
+              <div className="flex justify-between items-start mb-4">
+                <div >
+                  <h3 className="text-xl font-bold text-white">Hustle Studio </h3>
+                  <p className="text-gray-400 mt-2"> Freelance Web Developer </p>
+                </div>
+                <p className="text-gray-400"> Feb 2025 – Sep 2025</p>
+              </div>
+              <ul className="text-gray-200 space-y-2">
+                <li>• Built and deployed responsive websites using React.js, Next.js, Tailwind CSS, and Node.js.</li>
+                <li>• Focused on SEO optimization, performance improvements, and modern UI/UX.</li>
+                <li>• Managed end-to-end project lifecycles from requirements to deployment.</li>
+
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -423,7 +440,7 @@ export default function Portfolio() {
                   "SEO Optimization: Implemented SEO best practices, improving website visibility and search engine rankings.",
                 ],
                 techStack:[
-                  "Figma", "React.js", "Tailwind CSS", "Express.js"
+                  "Figma", "React.js", "Tailwind CSS", "Express.js" ,"Node Mailer"  
                 ],
                 img:"/toundra.png",
                 live:"https://toundra.vercel.app",
@@ -439,7 +456,7 @@ export default function Portfolio() {
                    "Optimized for SEO to improve product discoverability and organic traffic.",
                 ],
                   techStack:[
-                  "Figma", "React.js", "Tailwind CSS", "Express.js"
+                  "Figma", "React.js", "Tailwind CSS", "Express.js" ,"NodeJS" , "MongoDB"
                 ],
                 img:"/chemstock.png",
                 live:"https://chemstock.co.in",
@@ -454,7 +471,7 @@ export default function Portfolio() {
                       "Implemented secure user authentication, profile management, and request"
                 ],
                  techStack:[
-                  "Figma", "React.js", "Tailwind CSS", "Express.js"
+                  "Figma", "React.js", "Tailwind CSS", "Express.js","NodeJS", "REST API", "Redux", "MongoDB"
                 ],
                 img:"/DevTinder.jpg",   
                 github:"https://github.com/chrispaul-code/devTinder-web"
@@ -484,6 +501,63 @@ export default function Portfolio() {
                 ],
                 img:"/Swiggy-Clone.jpg",
                 github:"https://github.com/chrispaul-code"
+              },
+              {
+                title: "865HolidayLights",
+                description: [
+                  "Built and deployed a commercial website for a lighting company with SEO-friendly design",
+                  "Focused on high performance and smooth UI transitions across devices"
+                ],
+                 techStack:[
+                  "Figma", "React.js", "Tailwind CSS", "Next.JS"
+                ],
+                img:"/865HolidayLights.jpg",
+                live:"https://865holidaylights.com/",
+                github:"https://865holidaylights.com/",
+                tag:true
+              },
+              {
+                title: "Hustle Studio",
+                description: [
+                  "Designed and deployed a creative agency website featuring dynamic content and media integration",
+                  "Implemented responsive UI with optimized page load times for improved client engagement."
+                ],
+                 techStack:[
+                  "Figma", "React.js", "Tailwind CSS", "Next.JS"
+                ],
+                img:"/HustleStudio.jpg",
+                live:"https://www.hustlestudio.in/",
+                github:"https://github.com/chrispaul-code",
+                tag:true
+              },
+              {
+                title: "STEP Physio Lab",
+                description: [
+                  "Created an online presence for a physiotherapy clinic with service details and booking integration",
+                  "Improved SEO and mobile responsiveness for higher lead conversion."
+                ],
+                 techStack:[
+                  "Figma", "React.js", "Tailwind CSS", "Next.JS"
+                ],
+                img:"/StepsPhysio.jpg",
+                live:"https://www.stepsphysioperformancelab.com/",
+                github:"https://github.com/chrispaul-code",
+                tag:true
+              },
+              {
+                title: "New Life NGO ",
+                description: [
+                  "Built a fully responsive NGO website to showcase initiatives, donation drives, and activities.",
+                  "Implemented modern UI/UX components with focus on accessibility and performance",
+                  "Integrated HDFC payment gatway API's"
+                ],
+                 techStack:[
+                  "Figma", "React.js", "Tailwind CSS", "Next.JS", "NodeJS", "REST API",
+                ],
+                img:"/NewLifeNgo.jpg",
+                live:"https://ngo-three-beta.vercel.app/",
+                github:"https://github.com/chrispaul-code",
+                tag:true
               },
               // {
               //   title: "URL Shortener",
@@ -582,7 +656,7 @@ export default function Portfolio() {
       </section>
 
       {/* Freelance Services Section */}
-      <section id="freelance" className="relative z-10 py-20 px-6 ">
+      {/* <section id="freelance" className="relative z-10 py-20 px-6 ">
         <h2 className="text-3xl font-bold text-center mb-12">FREELANCE SERVICES</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           {[
@@ -611,7 +685,7 @@ export default function Portfolio() {
             </Card>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Education Section */}
       {/* <section id="education" className="relative z-10 py-20 px-6">
